@@ -23,8 +23,8 @@ class App extends Component {
     console.log("App - Mounted");
   }
 
+  // cloning the counters array from above
   handleIncrement = counter => {
-    // cloning the counters array from above
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
