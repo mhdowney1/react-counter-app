@@ -1,6 +1,10 @@
+// SHORTCUT: 'imrc'
 import React from "react";
 
-// Stateless Functional Component
+// SHORTCUT: 'cc' for a Class
+
+// SHORTCUT: 'sfc' for a Stateless Functional Component
+// Object Destructuring: ({ totalCounters })
 const NavBar = ({ totalCounters }) => {
   console.log("NavBar - Rendered");
 

@@ -1,13 +1,17 @@
 import React, { Component } from "react";
+
 class Counter extends Component {
+  // LIFECYCLE HOOK: Update Phase
   componentDidUpdate(prevProps, prevState) {
     console.log("prevProps", prevProps);
     console.log("prevState", prevState);
+
     if (prevProps.counter.value !== this.props.counter.value) {
       // ajax call and get new data from the server
     }
   }
 
+  // LIFECYCLE HOOK: Unmount Phase
   componentWillUnmount() {
     console.log("Counter - Unmount");
   }
@@ -16,8 +20,8 @@ class Counter extends Component {
   render() {
     console.log("Counter - Rendered");
 
+    // div is the parent, with two chilren, span and button
     return (
-      // div is the parent, with two chilren, span and button
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button

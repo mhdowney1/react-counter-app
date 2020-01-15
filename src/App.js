@@ -14,15 +14,19 @@ class App extends Component {
     ]
   };
 
+  // LIFECYCLE HOOK: Mount Phase
   constructor() {
     super();
     console.log("App - Constuctor");
   }
 
+  // LIFECYCLE HOOK: Mount Phase
   componentDidMount() {
+    // e.g. Ajax Call
     console.log("App - Mounted");
   }
 
+  // 3 METHODS THAT MODIFY THE STATE
   // cloning the counters array from above
   handleIncrement = counter => {
     const counters = [...this.state.counters];
@@ -40,17 +44,17 @@ class App extends Component {
     this.setState({ counters });
   };
 
-  // method
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
+  // LIFECYCLE HOOK: Mount Phase
   render() {
     console.log("App - Rendered");
 
     return (
-      //
+      // Use React.Fragment when returning multiple roots elements
       <React.Fragment>
         <NavBar
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
